@@ -1,0 +1,117 @@
+:root {
+  --green: rgb(0, 179, 107);
+  --blue: rgb(0, 13, 26);
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--blue);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-shadow: -1px 0 var(--green), 0 1px var(--green), 1px 0 var(--green), 0 -1px var(--green);
+  margin-bottom: 40px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  min-width: 340px;
+  max-width: 600px;
+  padding: 10px;
+  position: relative;
+  background: rgba( 255, 255, 255, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.3 );
+  backdrop-filter: blur( 3px );
+  -webkit-backdrop-filter: blur( 3px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.time-container,
+.labels {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular';
+  color: rgb(116, 187, 158);
+  font-size: 30px;
+  display: grid;
+  grid-template-columns: 90px 90px 90px 90px;
+  text-align: center;
+}
+
+.labels {
+  font-size: small;
+}
+
+.start-time,
+.stop-time,
+.reset-time {
+  font-size: 25px;
+  background-color: var(--green);
+  color: white;
+  padding: 10px;
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.start-time:hover,
+.stop-time:hover,
+.reset-time:hover {
+  background-color: rgba(0, 13, 26, 0.096);
+  border: 1px solid var(--green);
+}
+
+.author-text{
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+
+/*For reponsiveness on mobile devices*/
+@media screen and (max-width: 600px) {
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+  }
+
+  .time-container,
+  .labels {
+    grid-template-columns: 80px 80px 80px 80px;
+  }
+
+  .start-time,
+  .stop-time,
+  .reset-time {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .author-text {
+    font-size: 12px;
+  }
+}
